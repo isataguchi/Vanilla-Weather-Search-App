@@ -2,11 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GitHub example</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Vanilla Weather App</title>
   </head>
+
   <body>
-    <h1>GitHub test</h1>
+    <div class="container">
+      <div class="weather-app">
+        <form class="mb-3" id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="main-container">
+          <ul>
+            <h1 id="city"></h1>
+            <li id="date"></li>
+            <li id="description"></li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src=""
+                  alt=""
+                  class="float-left"
+                  id="icon"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong class="temperature" id="temperature">19</strong
+                  ><span class="units">
+                    <a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <span class="weather-description">
+                  <li>
+                    <strong>Humidity:</strong> <span id="humidity"></span>%
+                  </li>
+                  <li><strong>Wind:</strong> <span id="wind"></span>km/h</li>
+                </span>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-forecast" id="forecast"></div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
